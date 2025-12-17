@@ -3,10 +3,18 @@ import { COMPANY_NAME, COMPANY_FULL_NAME, CONTACT_INFO } from '../constants';
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 import Logo from './Logo';
 import { useLanguage } from '../contexts/LanguageContext';
+import { motion } from 'framer-motion';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
   const { content } = useLanguage();
+
+  const socialIcons = [
+    { icon: Facebook, href: "#", color: "#1877F2" },
+    { icon: Twitter, href: "#", color: "#1DA1F2" },
+    { icon: Instagram, href: "#", color: "#E4405F" },
+    { icon: Linkedin, href: "#", color: "#0A66C2" },
+  ];
 
   return (
     <footer className="bg-slate-900 text-white pt-16 pb-8 border-t border-slate-800">
@@ -78,10 +86,16 @@ const Footer: React.FC = () => {
             &copy; {currentYear} {COMPANY_NAME}. {content.footer.rights}
           </p>
           <div className="flex gap-4">
-            <a href="#" className="text-slate-500 hover:text-primary-400 transition-colors hover:scale-110"><Facebook size={20} /></a>
-            <a href="#" className="text-slate-500 hover:text-primary-400 transition-colors hover:scale-110"><Twitter size={20} /></a>
-            <a href="#" className="text-slate-500 hover:text-primary-400 transition-colors hover:scale-110"><Instagram size={20} /></a>
-            <a href="#" className="text-slate-500 hover:text-primary-400 transition-colors hover:scale-110"><Linkedin size={20} /></a>
+            {socialIcons.map((social, i) => (
+              <motion.a 
+                key={i}
+                href={social.href} 
+                whileHover={{ scale: 1.3, color: social.color }}
+                className="text-slate-500 transition-colors p-2 bg-slate-800 rounded-lg hover:bg-slate-700"
+              >
+                <social.icon size={20} />
+              </motion.a>
+            ))}
           </div>
         </div>
       </div>

@@ -1,3 +1,4 @@
+
 import { 
   Smartphone, 
   MessageSquare, 
@@ -8,8 +9,16 @@ import {
   ShieldCheck,
   Building2,
   School,
-  QrCode,
-  Radio
+  QrCode, 
+  Radio,
+  FileText,
+  ClipboardCheck,
+  Beaker,
+  Tag,
+  Layout,
+  History,
+  HardDrive,
+  FileBadge2
 } from 'lucide-react';
 import { ContactInfo, ContentSection, ProductItem } from './types';
 
@@ -59,8 +68,8 @@ export const CONTENT: Record<'id' | 'en', ContentSection> = {
       tagline: "Digital Inovatif Nusantara",
       titleStart: "Integrasikan Bisnismu",
       titleEnd: "Bersama DIGINOV",
-      description: "Kami adalah perusahaan penyedia layanan digital yang memadukan teknologi terkini dengan pemahaman mendalam terhadap kebutuhan industri keuangan.",
-      ctaPrimary: "Coba Sekarang",
+      description: "Penyedia layanan digital yang memadukan teknologi terkini dengan pemahaman mendalam terhadap kebutuhan industri keuangan dan transformasi digital.",
+      ctaPrimary: "Hubungi Kami",
       ctaSecondary: "Lihat Produk",
       status: "Sistem Optimal"
     },
@@ -70,109 +79,109 @@ export const CONTENT: Record<'id' | 'en', ContentSection> = {
       description: "DIGITAL INOVATIF NUSANTARA (DIGINOV) adalah perusahaan teknologi yang berfokus pada pengembangan solusi inovatif di bidang perbankan digital. Kami menghadirkan produk dan layanan yang memadukan teknologi terkini dengan pemahaman mendalam terhadap kebutuhan industri keuangan.",
       stats: {
         products: "Produk Digital",
-        support: "Support System"
+        support: "Dukungan 24/7"
       },
       visionTitle: "Visi Kami",
-      vision: "Menjadi mitra terpercaya dalam transformasi digital Indonesia, mendorong pertumbuhan ekonomi, inovasi, dan kesejahteraan masyarakat melalui solusi digital yang berkelanjutan dan berdampak.",
+      vision: "Menjadi mitra terpercaya dalam transformasi digital Indonesia, mendorong pertumbuhan ekonomi melalui solusi digital yang berkelanjutan and berdampak.",
       missionTitle: "Misi Kami",
       mission: [
         "Mendukung ekosistem digital dalam segala lini bidang industri.",
-        "Menyediakan digital solution dalam menunjang bisnis serta aktifitas dan menghadirkan Artificial Intelegence dalam prosesnya.",
-        "Menyediakan solusi digital untuk mengembangkan layanan digital yang inovatif, aman dan handal untuk memenuhi kebutuhan pelanggan di berbagai sektor industri.",
-        "Berperan dalam Ekosistem Digital Nasional serta bekerja sama dengan pemerintah, komunitas dan pelaku industri untuk mendorong percepatan adopsi teknologi digital dan mendukung agenda transformasi digital Indonesia.",
-        "Mengedepankan keberlanjutan dan Inovasi serta mengintegrasikan praktik keberlanjutan dalam pengembangan teknologi."
+        "Menyediakan solusi digital cerdas dengan integrasi Artificial Intelligence.",
+        "Menghadirkan layanan yang inovatif, aman, dan handal untuk berbagai sektor.",
+        "Mendorong percepatan adopsi teknologi digital secara nasional.",
+        "Mengedepankan praktik keberlanjutan dalam pengembangan teknologi."
       ],
-      readMore: "Lihat selengkapnya..."
+      readMore: "Selengkapnya..."
     },
     features: {
-      label: "Mengapa Memilih Kami",
-      title: "Kelebihan Produk Kami",
+      label: "Kelebihan",
+      title: "Mengapa Diginov?",
       items: [
         {
           id: 'f1',
-          title: 'Pantau dengan Mudah,',
-          subtitle: 'Kendalikan dengan Cerdas',
-          description: 'Optimalkan kinerja layanan Anda dengan fitur Monitoring Real-Time.',
+          title: 'Pantau Real-Time,',
+          subtitle: 'Kendali Penuh',
+          description: 'Optimalkan kinerja layanan Anda dengan fitur pemantauan data secara langsung.',
           details: [
-            'Memantau data secara langsung kapan saja, di mana saja.',
-            'Mendeteksi anomali lebih cepat, sebelum menjadi masalah.',
-            'Mengambil keputusan berbasis data dengan laporan yang terperinci dan akurat.'
+            'Pemantauan data secara real-time kapan saja.',
+            'Deteksi dini anomali sistem.',
+            'Laporan analitik yang akurat untuk keputusan bisnis.'
           ],
           icon: Monitor
         },
         {
           id: 'f2',
-          title: 'Integrasi Cerdas,',
-          subtitle: 'Langsung ke Cloud',
-          description: 'Transformasi digital Anda dimulai di sini! Dengan layanan Integrasi Sistem ke Cloud.',
+          title: 'Integrasi Cloud,',
+          subtitle: 'Skalabilitas Tinggi',
+          description: 'Transformasi infrastruktur Anda dengan integrasi sistem cloud yang aman.',
           details: [
-            'Kemudahan Sinkronisasi: Hubungkan sistem Anda dengan cloud dalam hitungan detik.',
-            'Akses Fleksibel: Pantau dan kelola data dari mana saja, kapan saja.',
-            'Keamanan Optimal: Perlindungan data canggih untuk menjaga privasi bisnis Anda.'
+            'Sinkronisasi data otomatis ke cloud.',
+            'Keamanan data standar perbankan.',
+            'Akses data fleksibel dari berbagai perangkat.'
           ],
           icon: Cloud
         },
         {
           id: 'f3',
-          title: 'Kemudahan dalam',
-          subtitle: 'Genggaman Anda',
-          description: 'Kami memahami pentingnya pengalaman pengguna yang praktis dan nyaman.',
+          title: 'User Experience,',
+          subtitle: 'Simpel & Modern',
+          description: 'Desain antarmuka yang intuitif untuk kenyamanan pengguna maksimal.',
           details: [
-            'Antarmuka Simpel: Dirancang intuitif, bahkan untuk pemula.',
-            'Navigasi Cepat: Temukan semua yang Anda butuhkan hanya dalam beberapa klik.',
-            'Tanpa Kerumitan: Fitur lengkap, tanpa proses yang rumit.'
+            'Navigasi cepat dan efisien.',
+            'Tampilan responsif di semua perangkat.',
+            'Kemudahan penggunaan tanpa pelatihan rumit.'
           ],
           icon: Smartphone
         },
         {
           id: 'f4',
-          title: 'Sistem Baru,',
-          subtitle: 'Teknologi Lebih Maju',
-          description: 'Sistem terbaru kami didukung teknologi terkini untuk mempermudah pekerjaan Anda.',
+          title: 'Teknologi AI,',
+          subtitle: 'Otomasi Cerdas',
+          description: 'Manfaatkan kecerdasan buatan untuk efisiensi operasional bisnis Anda.',
           details: [
-            'Otomasi Pintar: Kurangi pekerjaan manual dengan teknologi yang bekerja untuk Anda.',
-            'Kinerja Lebih Cepat: Pemrosesan data yang efisien, hemat waktu dan tenaga.',
-            'Keamanan Maksimal: Melindungi data Anda dengan standar teknologi terbaru.'
+            'Otomasi tugas rutin yang cerdas.',
+            'Pemrosesan data skala besar dengan AI.',
+            'Keamanan sistem berbasis perilaku pengguna.'
           ],
           icon: ShieldCheck
         }
       ]
     },
     products: {
-      label: "Layanan Kami",
-      title: "Ekosistem Solusi Digital",
-      description: "Rangkaian produk komprehensif untuk mendukung transformasi digital bisnis Anda.",
+      label: "Produk Kami",
+      title: "Solusi Digital Terintegrasi",
+      description: "Ekosistem layanan komprehensif untuk mendukung digitalisasi industri keuangan dan bisnis Anda.",
       items: PRODUCTS_LIST
     },
     gallery: {
-      label: "Dokumentasi",
-      title: "Galeri Produk & Aktivitas",
-      description: "Lihat bagaimana solusi kami diterapkan dalam berbagai skenario bisnis."
+      label: "Galeri",
+      title: "Aktivitas & Implementasi",
+      description: "Dokumentasi penerapan solusi digital Diginov di berbagai sektor industri."
     },
     contact: {
-      label: "Kontak Kami",
-      titleStart: "Mari Mulai",
-      titleEnd: "Kolaborasi",
-      description: "Tim kami siap membantu Anda menemukan solusi digital terbaik untuk kebutuhan bisnis Anda.",
-      locationTitle: "Lokasi Kantor",
-      phoneTitle: "Telepon",
-      emailTitle: "Email",
+      label: "Kontak",
+      titleStart: "Mulai Transformasi",
+      titleEnd: "Sekarang",
+      description: "Konsultasikan kebutuhan digital bisnis Anda dengan tim ahli kami.",
+      locationTitle: "Alamat Kantor",
+      phoneTitle: "Hubungi Kami",
+      emailTitle: "Email Resmi",
       formTitle: "Kirim Pesan",
-      success: "Pesan terkirim! Kami akan menghubungi Anda segera.",
+      success: "Pesan Anda telah kami terima!",
       form: {
-        name: "Masukan nama anda",
-        email: "Masukan email anda",
-        subject: "Masukan subjek pesan",
-        message: "Tulis pesan anda di sini",
-        btn: "Kirim Pesan",
+        name: "Nama Lengkap",
+        email: "Alamat Email",
+        subject: "Subjek",
+        message: "Pesan Anda",
+        btn: "Kirim Sekarang",
         sending: "Mengirim..."
       }
     },
     footer: {
-      navTitle: "Navigasi",
-      productsTitle: "Produk Unggulan",
-      rights: "All rights reserved.",
-      more: "Lihat Selengkapnya..."
+      navTitle: "Tautan Cepat",
+      productsTitle: "Layanan Populer",
+      rights: "Semua hak dilindungi.",
+      more: "Produk Lainnya..."
     }
   },
   en: {
@@ -187,120 +196,157 @@ export const CONTENT: Record<'id' | 'en', ContentSection> = {
       tagline: "Digital Innovative Nusantara",
       titleStart: "Integrate Your Business",
       titleEnd: "With DIGINOV",
-      description: "We are a digital service provider that combines the latest technology with a deep understanding of the financial industry's needs.",
-      ctaPrimary: "Try Now",
-      ctaSecondary: "View Products",
+      description: "A digital service provider combining cutting-edge technology with deep insights into financial industry needs.",
+      ctaPrimary: "Contact Us",
+      ctaSecondary: "Our Products",
       status: "System Optimal"
     },
     about: {
       label: "About Us",
-      title: `Get to Know ${COMPANY_FULL_NAME}`,
-      description: "DIGITAL INOVATIF NUSANTARA (DIGINOV) is a technology company focused on developing innovative solutions in digital banking. We provide products and services that combine the latest technology with a deep understanding of financial industry needs.",
+      title: `Know More About ${COMPANY_NAME}`,
+      description: "DIGINOV is a tech company specializing in digital banking innovation. We deliver services that blend modern technology with a profound understanding of fintech requirements.",
       stats: {
         products: "Digital Products",
-        support: "Support System"
+        support: "24/7 Support"
       },
       visionTitle: "Our Vision",
-      vision: "To become a trusted partner in Indonesia's digital transformation, driving economic growth, innovation, and community welfare through sustainable and impactful digital solutions.",
+      vision: "To be the most trusted partner in Indonesia's digital transformation journey.",
       missionTitle: "Our Mission",
       mission: [
-        "Support the digital ecosystem across all industrial sectors.",
-        "Provide digital solutions to support business and activities while integrating Artificial Intelligence in the process.",
-        "Provide digital solutions to develop innovative, safe, and reliable digital services to meet customer needs in various industrial sectors.",
-        "Play a role in the National Digital Ecosystem and collaborate with the government, communities, and industry players to accelerate digital technology adoption.",
-        "Prioritize sustainability and Innovation while integrating sustainable practices in technology development."
+        "Supporting digital ecosystems across all industries.",
+        "Providing smart solutions with AI integration.",
+        "Delivering secure and reliable services.",
+        "Accelerating digital adoption nationwide.",
+        "Prioritizing sustainability in innovation."
       ],
-      readMore: "Read more..."
+      readMore: "Read More..."
     },
     features: {
-      label: "Why Choose Us",
-      title: "Our Product Advantages",
+      label: "Features",
+      title: "Why Diginov?",
       items: [
         {
           id: 'f1',
-          title: 'Monitor with Ease,',
-          subtitle: 'Control Smartly',
-          description: 'Optimize your service performance with Real-Time Monitoring features.',
+          title: 'Real-Time Monitoring,',
+          subtitle: 'Full Control',
+          description: 'Optimize your services with live data monitoring capabilities.',
           details: [
-            'Monitor data directly anytime, anywhere.',
-            'Detect anomalies faster, before they become problems.',
-            'Make data-driven decisions with detailed and accurate reports.'
+            'Live data tracking anytime.',
+            'Early system anomaly detection.',
+            'Accurate analytic reports for business.'
           ],
           icon: Monitor
         },
         {
           id: 'f2',
-          title: 'Smart Integration,',
-          subtitle: 'Direct to Cloud',
-          description: 'Your digital transformation starts here! With System Integration to Cloud services.',
+          title: 'Cloud Integration,',
+          subtitle: 'High Scalability',
+          description: 'Transform your infrastructure with secure cloud system integration.',
           details: [
-            'Easy Synchronization: Connect your system to the cloud in seconds.',
-            'Flexible Access: Monitor and manage data from anywhere, anytime.',
-            'Optimal Security: Advanced data protection to maintain your business privacy.'
+            'Automatic cloud data sync.',
+            'Bank-grade data security.',
+            'Flexible data access anywhere.'
           ],
           icon: Cloud
         },
         {
           id: 'f3',
-          title: 'Convenience in',
-          subtitle: 'Your Hand',
-          description: 'We understand the importance of a practical and comfortable user experience.',
+          title: 'User Experience,',
+          subtitle: 'Simple & Modern',
+          description: 'Intuitive interface design for maximum user convenience.',
           details: [
-            'Simple Interface: Designed intuitively, even for beginners.',
-            'Fast Navigation: Find everything you need in just a few clicks.',
-            'No Hassle: Complete features without complicated processes.'
+            'Fast and efficient navigation.',
+            'Responsive displays across devices.',
+            'Ease of use without complex training.'
           ],
           icon: Smartphone
         },
         {
           id: 'f4',
-          title: 'New System,',
-          subtitle: 'Advanced Technology',
-          description: 'Our latest system is supported by the latest technology to make your work easier.',
+          title: 'AI Technology,',
+          subtitle: 'Smart Automation',
+          description: 'Leverage artificial intelligence for your business operational efficiency.',
           details: [
-            'Smart Automation: Reduce manual work with technology that works for you.',
-            'Faster Performance: Efficient data processing, saving time and energy.',
-            'Maximum Security: Protecting your data with the latest technology standards.'
+            'Smart routine task automation.',
+            'Large-scale data processing with AI.',
+            'Behavior-based system security.'
           ],
           icon: ShieldCheck
         }
       ]
     },
     products: {
-      label: "Our Services",
-      title: "Digital Solution Ecosystem",
-      description: "A comprehensive range of products to support your business digital transformation.",
+      label: "Products",
+      title: "Integrated Solutions",
+      description: "A comprehensive ecosystem to support your business digital transformation.",
       items: PRODUCTS_LIST
     },
     gallery: {
-      label: "Documentation",
-      title: "Product & Activity Gallery",
-      description: "See how our solutions are applied in various business scenarios."
+      label: "Gallery",
+      title: "Documentation",
+      description: "Visualizing Diginov solutions in various business scenarios."
     },
     contact: {
-      label: "Contact Us",
-      titleStart: "Let's Start",
-      titleEnd: "Collaborating",
-      description: "Our team is ready to help you find the best digital solutions for your business needs.",
-      locationTitle: "Office Location",
-      phoneTitle: "Phone",
-      emailTitle: "Email",
-      formTitle: "Send a Message",
-      success: "Message sent! We will contact you shortly.",
+      label: "Contact",
+      titleStart: "Start Your",
+      titleEnd: "Transformation",
+      description: "Consult your digital business needs with our expert team.",
+      locationTitle: "Office Address",
+      phoneTitle: "Call Us",
+      emailTitle: "Official Email",
+      formTitle: "Send Message",
+      success: "Message received!",
       form: {
-        name: "Enter your name",
-        email: "Enter your email",
-        subject: "Enter message subject",
-        message: "Write your message here",
-        btn: "Send Message",
+        name: "Full Name",
+        email: "Email Address",
+        subject: "Subject",
+        message: "Your Message",
+        btn: "Send Now",
         sending: "Sending..."
       }
     },
     footer: {
-      navTitle: "Navigation",
-      productsTitle: "Featured Products",
+      navTitle: "Quick Links",
+      productsTitle: "Top Services",
       rights: "All rights reserved.",
-      more: "View More..."
+      more: "More Products..."
     }
+  }
+};
+
+/**
+ * Fix: Requirements for Fertilizer & Pesticide Registration
+ * Added missing exported constants REGISTRATION_REQUIREMENTS and TOOLTIP_DATA
+ */
+export const REGISTRATION_REQUIREMENTS = {
+  admin: [
+    { id: 'a1', label: 'NIB / IUI', icon: FileBadge2 },
+    { id: 'a2', label: 'Sertifikat Merek', icon: Tag },
+    { id: 'a3', label: 'Akta Perusahaan', icon: FileText },
+    { id: 'a4', label: 'NPWP Perusahaan', icon: ClipboardCheck },
+  ],
+  technical: [
+    { id: 't1', label: 'Hasil Analisa LHP', icon: Beaker },
+    { id: 't2', label: 'Uji Efektivitas', icon: History },
+    { id: 't3', label: 'Rancangan Label', icon: Layout },
+    { id: 't4', label: 'MSDS / Safety Sheet', icon: HardDrive },
+  ]
+};
+
+/**
+ * Fix: Tooltip data for registration requirements mapping
+ */
+export const TOOLTIP_DATA = {
+  admin: {
+    'NIB / IUI': 'Nomor Induk Berusaha atau Izin Usaha Industri yang masih berlaku.',
+    'Sertifikat Merek': 'Bukti pendaftaran atau sertifikat merek dari DJKI.',
+    'Akta Perusahaan': 'Salinan akta pendirian dan perubahan terakhir perusahaan.',
+    'NPWP Perusahaan': 'Nomor Pokok Wajib Pajak atas nama badan usaha.'
+  },
+  technical: {
+    'Hasil Analisa LHP': 'Laporan hasil pengujian kandungan unsur hara atau bahan aktif.',
+    'Uji Efektivitas': 'Data pengujian lapangan terhadap tanaman target.',
+    'Rancangan Label': 'Desain visual kemasan sesuai peraturan kementerian.',
+    'MSDS / Safety Sheet': 'Dokumen keselamatan bahan kimia dan penanganan limbah.'
   }
 };

@@ -6,6 +6,28 @@ import { Check, ArrowUpRight } from 'lucide-react';
 const Features: React.FC = () => {
   const { content } = useLanguage();
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: 0.7,
+        ease: "easeOut"
+      }
+    }
+  };
+
   return (
     <section id="features" className="py-32 bg-slate-950 relative overflow-hidden">
       {/* Background Decor */}
@@ -14,8 +36,9 @@ const Features: React.FC = () => {
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-20">
           <motion.span 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             className="text-tertiary-400 font-bold tracking-widest text-sm uppercase block mb-4"
           >
             {content.features.label}
@@ -24,6 +47,7 @@ const Features: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
             className="text-3xl md:text-5xl font-bold mb-6 text-white"
           >
             {content.features.title}
@@ -32,29 +56,42 @@ const Features: React.FC = () => {
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
+            transition={{ delay: 0.3, duration: 0.8 }}
             className="h-1 w-24 bg-gradient-to-r from-primary-500 to-secondary-500 mx-auto rounded-full"
           ></motion.div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 md:gap-12">
-            {content.features.items.map((feature, idx) => (
+        <motion.div 
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            className="grid lg:grid-cols-2 gap-8 md:gap-12"
+        >
+            {content.features.items.map((feature) => (
                 <motion.div 
                     key={feature.id}
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: idx * 0.1 }}
-                    whileHover={{ y: -5 }}
+                    variants={cardVariants}
+                    whileHover="hover"
                     className="group relative flex flex-col md:flex-row gap-8 bg-white/5 backdrop-blur-sm border border-white/5 p-8 md:p-10 rounded-[2rem] hover:bg-white/10 hover:border-white/10 transition-all duration-300"
                 >
-                    {/* Hover Gradient Border Effect */}
-                    <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-r from-primary-500/20 to-secondary-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                    <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-r from-primary-500/10 to-secondary-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
 
                     <div className="shrink-0 relative">
-                        <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-slate-800 to-slate-900 border border-white/10 flex items-center justify-center text-white shadow-xl group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 relative z-10">
-                            <feature.icon size={36} className="text-secondary-400 group-hover:text-white transition-colors" />
-                        </div>
-                        {/* Glow under icon */}
+                        <motion.div 
+                            variants={{
+                              hover: { scale: 1.1, rotate: 5 }
+                            }}
+                            className="w-20 h-20 rounded-2xl bg-gradient-to-br from-slate-800 to-slate-900 border border-white/10 flex items-center justify-center text-white shadow-xl relative z-10"
+                        >
+                            <motion.div
+                              variants={{
+                                hover: { scale: 1.2, rotate: -10 }
+                              }}
+                            >
+                                <feature.icon size={36} className="text-secondary-400 group-hover:text-white transition-colors duration-300" />
+                            </motion.div>
+                        </motion.div>
                         <div className="absolute inset-0 bg-secondary-500/30 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     </div>
 
@@ -86,7 +123,7 @@ const Features: React.FC = () => {
                     </div>
                 </motion.div>
             ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
