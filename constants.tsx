@@ -1,4 +1,3 @@
-
 import { 
   Smartphone, 
   MessageSquare, 
@@ -10,15 +9,7 @@ import {
   Building2,
   School,
   QrCode, 
-  Radio,
-  FileText,
-  ClipboardCheck,
-  Beaker,
-  Tag,
-  Layout,
-  History,
-  HardDrive,
-  FileBadge2
+  Radio
 } from 'lucide-react';
 import { ContactInfo, ContentSection, ProductItem } from './types';
 
@@ -251,8 +242,8 @@ export const CONTENT: Record<'id' | 'en', ContentSection> = {
         },
         {
           id: 'f3',
-          title: 'User Experience,',
-          subtitle: 'Simple & Modern',
+          title: 'Simple & Modern',
+          subtitle: 'User Experience',
           description: 'Intuitive interface design for maximum user convenience.',
           details: [
             'Fast and efficient navigation.',
@@ -311,42 +302,5 @@ export const CONTENT: Record<'id' | 'en', ContentSection> = {
       rights: "All rights reserved.",
       more: "More Products..."
     }
-  }
-};
-
-/**
- * Fix: Requirements for Fertilizer & Pesticide Registration
- * Added missing exported constants REGISTRATION_REQUIREMENTS and TOOLTIP_DATA
- */
-export const REGISTRATION_REQUIREMENTS = {
-  admin: [
-    { id: 'a1', label: 'NIB / IUI', icon: FileBadge2 },
-    { id: 'a2', label: 'Sertifikat Merek', icon: Tag },
-    { id: 'a3', label: 'Akta Perusahaan', icon: FileText },
-    { id: 'a4', label: 'NPWP Perusahaan', icon: ClipboardCheck },
-  ],
-  technical: [
-    { id: 't1', label: 'Hasil Analisa LHP', icon: Beaker },
-    { id: 't2', label: 'Uji Efektivitas', icon: History },
-    { id: 't3', label: 'Rancangan Label', icon: Layout },
-    { id: 't4', label: 'MSDS / Safety Sheet', icon: HardDrive },
-  ]
-};
-
-/**
- * Fix: Tooltip data for registration requirements mapping
- */
-export const TOOLTIP_DATA = {
-  admin: {
-    'NIB / IUI': 'Nomor Induk Berusaha atau Izin Usaha Industri yang masih berlaku.',
-    'Sertifikat Merek': 'Bukti pendaftaran atau sertifikat merek dari DJKI.',
-    'Akta Perusahaan': 'Salinan akta pendirian dan perubahan terakhir perusahaan.',
-    'NPWP Perusahaan': 'Nomor Pokok Wajib Pajak atas nama badan usaha.'
-  },
-  technical: {
-    'Hasil Analisa LHP': 'Laporan hasil pengujian kandungan unsur hara atau bahan aktif.',
-    'Uji Efektivitas': 'Data pengujian lapangan terhadap tanaman target.',
-    'Rancangan Label': 'Desain visual kemasan sesuai peraturan kementerian.',
-    'MSDS / Safety Sheet': 'Dokumen keselamatan bahan kimia dan penanganan limbah.'
   }
 };

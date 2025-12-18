@@ -30,32 +30,50 @@ const Hero: React.FC = () => {
       size: Math.random() * 4 + 1,
       duration: Math.random() * 15 + 10,
       delay: Math.random() * 5,
-      color: i % 2 === 0 ? '#0090d4' : '#00c2b2' // Primary or Secondary
+      color: i % 2 === 0 ? '#0090d4' : '#00c2b2' 
     })), []);
 
   const titleWords = content.hero.titleStart.split(' ');
 
   return (
     <section id="home" className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden min-h-screen flex items-center bg-slate-950">
-      {/* Wave/Ripple Distortion Overlay */}
-      <motion.div 
-        className="absolute inset-0 z-0 opacity-40 pointer-events-none"
-        animate={{ 
-          x: mousePos.x * 0.5, 
-          y: mousePos.y * 0.5 
-        }}
-        transition={{ type: "tween", ease: "linear", duration: 0.2 }}
-      >
-        <svg className="absolute w-full h-full" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <filter id="hero-ripple">
-              <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="2" result="noise" />
-              <feDisplacementMap in="SourceGraphic" in2="noise" scale="30" />
-            </filter>
-          </defs>
-          <rect width="100%" height="100%" fill="transparent" filter="url(#hero-ripple)" />
-        </svg>
-      </motion.div>
+      
+      {/* Dynamic Animated Waves Background */}
+      <div className="absolute inset-0 z-0 pointer-events-none opacity-30 overflow-hidden">
+        {/* Wave 1 - Logo Blue */}
+        <motion.div 
+            className="absolute bottom-0 left-0 w-[200%] h-full"
+            animate={{ 
+                x: [0, -1440, 0],
+                y: mousePos.y * 0.2
+            }}
+            transition={{ 
+                x: { duration: 25, repeat: Infinity, ease: "linear" },
+                y: { type: "spring", damping: 15 }
+            }}
+        >
+            <svg viewBox="0 0 1440 320" className="absolute bottom-0 w-full h-auto min-h-[400px]" preserveAspectRatio="none">
+                <path fill="#0090d4" fillOpacity="0.4" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,213.3C672,224,768,224,864,202.7C960,181,1056,139,1152,133.3C1248,128,1344,160,1392,176L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
+        </motion.div>
+
+        {/* Wave 2 - Logo Teal */}
+        <motion.div 
+            className="absolute bottom-0 left-0 w-[200%] h-full"
+            animate={{ 
+                x: [-1440, 0, -1440],
+                y: mousePos.y * -0.2
+            }}
+            transition={{ 
+                x: { duration: 20, repeat: Infinity, ease: "linear" },
+                y: { type: "spring", damping: 15 }
+            }}
+        >
+            <svg viewBox="0 0 1440 320" className="absolute bottom-0 w-full h-auto min-h-[300px]" preserveAspectRatio="none">
+                <path fill="#00c2b2" fillOpacity="0.3" d="M0,160L60,170.7C120,181,240,203,360,181.3C480,160,600,96,720,101.3C840,107,960,181,1080,202.7C1200,224,1320,192,1380,176L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+            </svg>
+        </motion.div>
+      </div>
 
       <div className="absolute inset-0 z-0">
          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-900 via-slate-950 to-black"></div>
@@ -194,7 +212,7 @@ const Hero: React.FC = () => {
 
         </div>
 
-        {/* Hero Visual Mockup with Zoom and Saturation */}
+        {/* Hero Visual Mockup */}
         <motion.div 
             style={{ y: y1 }}
             initial={{ opacity: 0, rotateX: 20, y: 100 }}
